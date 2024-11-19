@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5022:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - webapp_network
+
+networks:
+  webapp_network:
+    driver: bridge
